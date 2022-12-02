@@ -1,32 +1,33 @@
 import React, { useState } from 'react';
+import { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
-import StyledFormInput, {
-  Input,
-  Label,
-  ErrorMessage,
-} from './FormInput.styled';
+import { Container, Input, Label, ErrorMessage } from './FormInput.styled';
 
 interface FormInputProps {
-  onChange: () => void;
   id: string;
-  value: string;
+  inputName: Path<FieldValues>;
   label: string;
   isValid: boolean;
+  isTouched: boolean;
   errorText: string;
+  register: UseFormRegister<any>;
   type: string;
-  width: string;
-  mt: string;
+  width?: string;
+  mt?: string;
+  mb?: string;
 }
 
 function FormInput({
   errorText,
   id,
+  inputName,
   isValid,
+  isTouched,
   label,
   mt,
-  onChange,
+  mb,
+  register,
   type,
-  value,
   width,
 }: FormInputProps) {
   const [isClicked, setIsClicked] = useState<boolean>(false);
@@ -34,24 +35,23 @@ function FormInput({
   const onClick = (): void => {
     if (isClicked === false) setIsClicked(true);
   };
-
+console.log(isValid && !isTouched)
   return (
-    <StyledFormInput mt={mt}>
+    <Container mt={mt} mb={mb}>
       <Label htmlFor={id}>{label}</Label>
       <Input
-        onChange={onChange}
-        value={value}
+        {...register(inputName)}
         onClick={onClick}
-        isValid={isValid}
+        isValid={isValid && !isTouched}
         isClicked={isClicked}
         id={id}
         type={type}
         width={width}
       />
-      {!isValid && errorText && (
-        <ErrorMessage isValid={isValid}>{errorText}</ErrorMessage>
+      {!isValid && errorText && isTouched && (
+        <ErrorMessage isValid={isValid && !isTouched}>{errorText}</ErrorMessage>
       )}
-    </StyledFormInput>
+    </Container>
   );
 }
 

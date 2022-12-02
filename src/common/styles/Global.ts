@@ -108,16 +108,21 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
-        display: flex;
-        justify-content:center;
-        align-items:center;
         width: 100%;
-        margin: auto;
         background-color: var(--color-bgc);
         font-size: 2rem;
         font-family: "Inter", Verdana, sans-serif;
         color: var(--color-font);
         line-height: 1.5;
+    }
+
+    #root {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: auto;
+        max-width: 1133px;
+        height: 100vh;
     }
 
     a {

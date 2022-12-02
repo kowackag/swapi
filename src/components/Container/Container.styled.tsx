@@ -1,8 +1,9 @@
 import styled from 'styled-components';
 
 const StyledContainer = styled.div`
-  max-width: 1130px;
-  height: 100vh;
+  padding: 20px;
+  width: 100%;
+  height: 100%;
   max-height: 1200px;
   background-color: #fff;
 `;

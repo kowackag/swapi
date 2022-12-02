@@ -1,49 +1,86 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
+import { yupResolver } from '@hookform/resolvers/yup';
 import FormInput from 'components/FormInput/FormInput';
+import { Form } from './RegisterForm.styled';
+import valdationSchema from './valdationSchema';
 
-// interface UserDataTypes {
-//   login: string;
-//   password: string;
-//   email: string;
-//   phone: string;
-// }
+interface UserDataTypes {
+  login: string;
+  password: string;
+  email: string;
+  phone: string;
+}
 
 const RegisterForm = () => {
-  //   const {
-  //     register,
-  //     handleSubmit,
-  //     setValue,
-  //     formState: { errors, isValid, touchedFields },
-  //   } = useForm<FieldValues>({
-  //     resolver: '',
-  //     mode: 'all',
-  //     defaultValues: {
-  //       login: '',
-  //       password: '',
-  //       email: 'woman',
-  //       phone: '',
-  //     },
-  //   });
+  const {
+    register,
+    handleSubmit,
+    formState: { errors, touchedFields },
+  } = useForm<FieldValues>({
+    resolver: yupResolver(valdationSchema),
+    mode: 'all',
+    defaultValues: {
+      login: '',
+      password: '',
+      email: '',
+      phone: '',
+    },
+  });
 
-  //   const handleSubmit = ( e: MouseEvent<HTMLButtonElement>) => {
-  //     e.preventDefault();
-  //   }
+  const onSubmit = (data: UserDataTypes) => {
+    console.log(data);
+    return data;
+  };
 
   return (
-    <div>
+    <Form onSubmit={handleSubmit(onSubmit)}>
       <FormInput
-        // onSubmit={handleSubmit}
         id="login"
+        inputName="login"
         label="Login:"
         type="text"
-        // isValid={!errors.login}
-        // register={register}
-        // touched={touchedFields.login}
-        // errorText={errors.login?.message}
-        mt="35px"
+        isValid={!errors.login}
+        register={register}
+        isTouched={touchedFields.login}
+        errorText={errors.login?.message}
+        mb="24px"
       />
-    </div>
+      <FormInput
+        id="password"
+        inputName="password"
+        label="Hasło:"
+        type="password"
+        isValid={!errors.password}
+        register={register}
+        isTouched={touchedFields.password}
+        errorText={errors.password?.message}
+        mb="24px"
+      />
+      <FormInput
+        id="email"
+        inputName="email"
+        label="E-mail:"
+        type="text"
+        isValid={!errors.email}
+        register={register}
+        isTouched={touchedFields.email}
+        errorText={errors.email?.message}
+        mb="24px"
+      />
+      <FormInput
+        id="phone"
+        inputName="phone"
+        label="Numer telefonu:"
+        type="text"
+        isValid={!errors.phone}
+        register={register}
+        isTouched={touchedFields.phone}
+        errorText={errors.phone?.message}
+        mb="24px"
+      />
+      <input type="submit" value="send"/>
+    </Form>
   );
 };
 

@@ -11,8 +11,8 @@ import InterBoldWoff from 'common/fonts/Inter/inter-bold-webfont.woff';
 import InterBoldWoff2 from 'common/fonts/Inter/inter-bold-webfont.woff2';
 import InterExtraBoldWoff from 'common/fonts/Inter/inter-extrabold-webfont.woff';
 import InterExtraBoldWoff2 from 'common/fonts/Inter/inter-extrabold-webfont.woff2';
-import InterLightItalicWoff from 'common/fonts/Inter/inter-lightitalic-webfont.woff';
-import InterLightItalicWoff2 from 'common/fonts/Inter/inter-lightitalic-webfont.woff2';
+import InterLightItalicWoff from 'common/fonts/Inter/inter-lightitalic-beta-webfont.woff';
+import InterLightItalicWoff2 from 'common/fonts/Inter/inter-lightitalic-beta-webfont.woff2';
 
 interface ThemeType {
   colorBgc: string;

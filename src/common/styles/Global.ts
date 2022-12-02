@@ -55,7 +55,6 @@ const GlobalStyle = createGlobalStyle`
         url(${LatoBoldWoff2}) format('woff2'),
         url(${LatoBoldWoff}) format('woff');
     }
-
     @font-face {
         font-family: "Lato";
         font-style: italic;
@@ -109,10 +108,14 @@ const GlobalStyle = createGlobalStyle`
     }
 
     body {
+        display: flex;
+        justify-content:center;
+        align-items:center;
         width: 100%;
         margin: auto;
+        background-color: var(--color-bgc);
+        font-size: 2rem;
         font-family: "Inter", Verdana, sans-serif;
-        font-size: 1.6rem;
         color: var(--color-font);
         line-height: 1.5;
     }

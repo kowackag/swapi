@@ -1,10 +1,11 @@
 import React from 'react';
+import RegisterTitle from 'components/RegisterTitle/RegisterTitle';
 
 const Register = () => {
   return (
-    <>
-      <h2>Register</h2>
-    </>
+    <article>
+      <RegisterTitle />
+    </article>
   );
 };
 

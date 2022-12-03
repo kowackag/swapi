@@ -3,6 +3,7 @@ import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import FormInput from 'components/FormInput/FormInput';
+import Button from 'components/Button/Button';
 
 import valdationSchema from './valdationSchema';
 
@@ -43,7 +44,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)}>
+    <form>
       <FormInput
         id="login"
         inputName="login"
@@ -99,7 +100,13 @@ const RegisterForm = () => {
         errorText={errors.isAccept?.message}
         mb="24px"
       />
-      <input type="submit" value="zapisz" />
+      <Button
+        type="submit"
+        value="zapisz"
+        onClick={handleSubmit(onSubmit)}
+        bgc="var(--color-blue)"
+        width="224px"
+      />
     </form>
   );
 };

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
 import { Container, Input, Label, ErrorMessage } from './FormInput.styled';
@@ -22,7 +22,6 @@ function FormInput({
   id,
   inputName,
   isValid,
-  isTouched,
   label,
   mt,
   mb,
@@ -30,26 +29,18 @@ function FormInput({
   type,
   width,
 }: FormInputProps) {
-  const [isClicked, setIsClicked] = useState<boolean>(false);
-
-  const onClick = (): void => {
-    if (isClicked === false) setIsClicked(true);
-  };
-  console.log(isValid && !isTouched);
   return (
     <Container mt={mt} mb={mb}>
       <Label htmlFor={id}>{label}</Label>
       <Input
         {...register(inputName)}
-        onClick={onClick}
-        isValid={isValid && !isTouched}
-        isClicked={isClicked}
+        isValid={isValid}
         id={id}
         type={type}
         width={width}
       />
-      {!isValid && errorText && isTouched && (
-        <ErrorMessage isValid={isValid && !isTouched}>{errorText}</ErrorMessage>
+      {!isValid && errorText && (
+        <ErrorMessage isValid={isValid}>{errorText}</ErrorMessage>
       )}
     </Container>
   );

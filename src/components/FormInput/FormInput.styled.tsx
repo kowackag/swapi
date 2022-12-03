@@ -2,7 +2,6 @@ import styled from 'styled-components';
 
 export const Input = styled.input<{
   isValid: boolean;
-  isClicked: boolean;
 }>`
   display: block;
   width: 100%;
@@ -11,11 +10,14 @@ export const Input = styled.input<{
   outline: none;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: ${({ isValid }) => {
-    console.log(7, isValid);
-    return isValid ? 'var(--color-font)' : 'var(--color-error)';
-  }};
+  border-bottom-color: ${({ isValid }) =>
+    isValid ? 'var(--color-font)' : 'var(--color-error)'};
   font-size: 1.6rem;
+
+  &:-webkit-autofill {
+    box-shadow: inset 22px 22px 0 #fff, inset -22px -22px 0 #fff;
+    -webkit-text-fill-color: var(--color-font) !important;
+  }
 `;
 
 export const Label = styled.label`
@@ -29,7 +31,7 @@ export const ErrorMessage = styled.p<{
   isValid: boolean;
 }>`
   position: absolute;
-  bottom: -30px;
+  bottom: -28px;
   right: 0;
   font-style: italic;
   font-weight: 300;

@@ -11,6 +11,7 @@ interface UserDataTypes {
   password: string;
   email: string;
   phone: string;
+  isAccept: boolean;
 }
 
 const RegisterForm = () => {
@@ -26,12 +27,19 @@ const RegisterForm = () => {
       password: '',
       email: '',
       phone: '',
+      isAccept: false,
     },
   });
 
   const onSubmit = (data: UserDataTypes) => {
     console.log(data);
-    return data;
+    return {
+      login: data.login,
+      password: data.password,
+      email: data.email,
+      phone: data.phone,
+      isAccept: data.isAccept,
+    };
   };
 
   return (
@@ -80,7 +88,18 @@ const RegisterForm = () => {
         errorText={errors.phone?.message}
         mb="24px"
       />
-      <input type="submit" value="send" />
+      <FormInput
+        id="agree"
+        inputName="agree"
+        label="Akceptuję Regulamin:"
+        type="checkbox"
+        isValid={!errors.isAccept}
+        register={register}
+        isTouched={touchedFields.isAccept}
+        errorText={errors.isAccept?.message}
+        mb="24px"
+      />
+      <input type="submit" value="zapisz" />
     </form>
   );
 };

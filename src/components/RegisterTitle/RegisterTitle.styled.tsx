@@ -20,6 +20,8 @@ const StyledRegisterTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
+  margin-top: 86px;
+  margin-bottom: 58px;
 `;
 
 export default StyledRegisterTitle;

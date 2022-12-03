@@ -2,10 +2,10 @@ import React from 'react';
 import { Route, Routes, Navigate } from 'react-router-dom';
 
 import { Paths } from 'common/constants/paths';
+
+import { Container } from 'components/Containers/Container.styled';
 import Avatar from 'views/Avatar';
 import Register from 'views/Register';
-
-import Container from 'components/Container/Container';
 
 const App = () => {
   return (

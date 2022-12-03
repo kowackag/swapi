@@ -35,7 +35,7 @@ function FormInput({
   const onClick = (): void => {
     if (isClicked === false) setIsClicked(true);
   };
-console.log(isValid && !isTouched)
+  console.log(isValid && !isTouched);
   return (
     <Container mt={mt} mb={mb}>
       <Label htmlFor={id}>{label}</Label>

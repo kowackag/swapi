@@ -11,8 +11,10 @@ export const Input = styled.input<{
   outline: none;
   border-bottom-style: solid;
   border-bottom-width: 2px;
-  border-bottom-color: ${({ isValid }) =>{ console.log(7, isValid)
-   return isValid ? 'var(--color-font)' : 'var(--color-error)'}};
+  border-bottom-color: ${({ isValid }) => {
+    console.log(7, isValid);
+    return isValid ? 'var(--color-font)' : 'var(--color-error)';
+  }};
   font-size: 1.6rem;
 `;
 

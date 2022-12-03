@@ -1,8 +1,9 @@
 import React from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
+
 import FormInput from 'components/FormInput/FormInput';
-import { Form } from './RegisterForm.styled';
+
 import valdationSchema from './valdationSchema';
 
 interface UserDataTypes {
@@ -34,7 +35,7 @@ const RegisterForm = () => {
   };
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit)}>
+    <form onSubmit={handleSubmit(onSubmit)}>
       <FormInput
         id="login"
         inputName="login"
@@ -79,8 +80,8 @@ const RegisterForm = () => {
         errorText={errors.phone?.message}
         mb="24px"
       />
-      <input type="submit" value="send"/>
-    </Form>
+      <input type="submit" value="send" />
+    </form>
   );
 };
 

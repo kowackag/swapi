@@ -4,6 +4,8 @@ const StyledButton = styled.button<{
   bgc: string;
   width: string;
 }>`
+  display: block;
+  margin: auto;
   padding: 10px 4px 4px;
   width: ${({ width }) => width};
   border: none;

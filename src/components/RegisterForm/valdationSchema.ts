@@ -8,8 +8,7 @@ const valdationSchema = yup.object().shape({
     .email('Nieprawidłowy format adresu e-mail')
     .required('Adres e-mail jest wymagany'),
   phone: yup.string().required('Nieprawidłowy numer telefonu'),
-  isAccept: yup.bool(),
-  // .oneOf([true], 'Wymagana akceptacja regulaminu'),
+  isAccepted: yup.bool().oneOf([true], 'Wymagana akceptacja regulaminu'),
 });
 
 export default valdationSchema;

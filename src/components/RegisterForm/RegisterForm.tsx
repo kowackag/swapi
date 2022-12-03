@@ -6,14 +6,7 @@ import FormInput from 'components/FormInput/FormInput';
 import Button from 'components/Button/Button';
 
 import valdationSchema from './valdationSchema';
-
-interface UserDataTypes {
-  login: string;
-  password: string;
-  email: string;
-  phone: string;
-  isAccept: boolean;
-}
+import FormCheckbox from 'components/FormCheckbok/FormCheckbox';
 
 const RegisterForm = () => {
   const {
@@ -23,25 +16,12 @@ const RegisterForm = () => {
   } = useForm<FieldValues>({
     resolver: yupResolver(valdationSchema),
     mode: 'all',
-    defaultValues: {
-      login: '',
-      password: '',
-      email: '',
-      phone: '',
-      isAccept: false,
-    },
   });
 
-  const onSubmit = (data: UserDataTypes) => {
+  const onSubmit = handleSubmit((data) => {
     console.log(data);
-    return {
-      login: data.login,
-      password: data.password,
-      email: data.email,
-      phone: data.phone,
-      isAccept: data.isAccept,
-    };
-  };
+    return data;
+  });
 
   return (
     <form>
@@ -89,21 +69,20 @@ const RegisterForm = () => {
         errorText={errors.phone?.message}
         mb="24px"
       />
-      <FormInput
-        id="agree"
-        inputName="agree"
+      <FormCheckbox
+        id="isAccepted"
+        inputName="isAccepted"
         label="Akceptuję Regulamin:"
         type="checkbox"
-        isValid={!errors.isAccept}
+        isValid={!errors.isAccepted}
         register={register}
-        isTouched={touchedFields.isAccept}
-        errorText={errors.isAccept?.message}
+        errorText={errors.isAccepted?.message}
         mb="24px"
       />
       <Button
         type="submit"
         value="zapisz"
-        onClick={handleSubmit(onSubmit)}
+        onClick={onSubmit}
         bgc="var(--color-blue)"
         width="224px"
       />

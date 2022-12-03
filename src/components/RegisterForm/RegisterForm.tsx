@@ -77,7 +77,8 @@ const RegisterForm = () => {
         isValid={!errors.isAccepted}
         register={register}
         errorText={errors.isAccepted?.message}
-        mb="24px"
+        mt="36px"
+        mb="28px"
       />
       <Button
         type="submit"

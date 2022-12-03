@@ -5,33 +5,34 @@ export const Input = styled.input<{
 }>`
   display: block;
   width: 100%;
-  padding: 6px 0;
+  padding: 12px 0;
   border: none;
   outline: none;
   border-bottom-style: solid;
   border-bottom-width: 2px;
   border-bottom-color: ${({ isValid }) =>
     isValid ? 'var(--color-font)' : 'var(--color-error)'};
-  font-size: 1.6rem;
-
+  font-size: 2rem;
   &:-webkit-autofill {
-    box-shadow: inset 22px 22px 0 #fff, inset -22px -22px 0 #fff;
+    font-size: 2rem;
+    box-shadow: inset 30px 30px 0 #fff, inset -30px -30px 0 #fff;
     -webkit-text-fill-color: var(--color-font) !important;
   }
 `;
 
 export const Label = styled.label`
   display: block;
-  padding: 6px 0;
-  margin-bottom: 18px;
+  padding: 8px 0;
+  margin-bottom: 6px;
   font-weight: 700;
+  line-height: 165%;
 `;
 
 export const ErrorMessage = styled.p<{
   isValid: boolean;
 }>`
   position: absolute;
-  bottom: -28px;
+  bottom: -30px;
   right: 0;
   font-style: italic;
   font-weight: 300;

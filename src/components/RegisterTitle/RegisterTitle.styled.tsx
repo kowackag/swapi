@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Title = styled.h2`
-  padding: 11px 0;
+  padding: 12px 0;
   font-size: 2rem;
   letter-spacing: 3px;
   font-weight: 800;
@@ -20,7 +20,7 @@ const StyledRegisterTitle = styled.div`
   display: flex;
   flex-direction: column;
   align-items: flex-end;
-  margin-top: 86px;
+  margin-top: 94px;
   margin-bottom: 58px;
 `;
 

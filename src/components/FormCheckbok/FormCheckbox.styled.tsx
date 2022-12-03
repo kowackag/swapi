@@ -27,21 +27,10 @@ export const Input = styled.input<{
     background-color: white;
     border-color: ${({ isValid }) =>
       isValid ? 'var(--color-font)' : 'var(--color-error)'};
-    font-size: 1.6rem;
   }
 
   &:checked::after {
-    display: inline-block;
-    box-sizing: border-box;
-    width: 30px;
-    height: 30px;
     content: url('icons/yes.svg');
-    border-style: solid;
-    border-width: 3px;
-    border-radius: 3px;
-    background-color: white;
-    border-color: var(--color-font);
-    font-size: 1.6rem;
   }
 `;
 

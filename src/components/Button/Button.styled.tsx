@@ -6,7 +6,7 @@ const StyledButton = styled.button<{
 }>`
   display: block;
   margin: auto;
-  padding: 10px 4px 4px;
+  padding: 9px 4px;
   width: ${({ width }) => width};
   border: none;
   box-shadow: 10px 4px 4px rgba(0, 0, 0, 0.75);

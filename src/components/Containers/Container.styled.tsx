@@ -15,6 +15,8 @@ export const RegisterContainer = styled.article`
 `;
 
 export const AvatarContainer = styled.div`
-  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   font-family: 'Lato', Verdana, sans-serif;
 `;

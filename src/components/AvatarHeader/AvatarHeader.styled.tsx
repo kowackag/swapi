@@ -6,9 +6,9 @@ export const Name = styled.p`
 
 const StyledAvatarHeader = styled.header`
   display: flex;
-  width: 100%;
   justify-content: space-between;
   align-items: flex-start;
+  width: 100%;
 `;
 
 export default StyledAvatarHeader;

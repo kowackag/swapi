@@ -1,10 +1,15 @@
 import React from 'react';
 
+import { AvatarContainer } from 'components/Containers/Container.styled';
+import AvatarHeader from 'components/AvatarHeader/AvatarHeader';
+import StarWars from 'components/StarWars/StarWars';
+
 const Avatar = () => {
   return (
-    <>
-      <h2>Avatar</h2>
-    </>
+    <AvatarContainer>
+      <AvatarHeader />
+      <StarWars />
+    </AvatarContainer>
   );
 };
 

@@ -21,7 +21,7 @@ interface ThemeType {
   colorFont: string;
   colorBlue: string;
   colorGreen: string;
-  colorOlive: string;
+  colorGrey: string;
 }
 
 interface PropsType {
@@ -36,7 +36,7 @@ const GlobalStyle = createGlobalStyle`
         --color-error:${({ theme }: PropsType) => theme.colorError};
         --color-blue:${({ theme }: PropsType) => theme.colorBlue};
         --color-green:${({ theme }: PropsType) => theme.colorGreen};
-        --color-olive:${({ theme }: PropsType) => theme.colorOlive};
+        --color-grey:${({ theme }: PropsType) => theme.colorGrey};
     }
 
     @font-face {

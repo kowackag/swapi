@@ -5,5 +5,5 @@ export const theme = {
   colorFont: '#000',
   colorBlue: '#071594',
   colorGreen: '#35660E',
-  colorOlive: '#35660E',
+  colorGrey: '#40483A',
 };

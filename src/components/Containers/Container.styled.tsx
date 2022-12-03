@@ -13,3 +13,8 @@ export const RegisterContainer = styled.article`
   margin: auto;
   padding-left: 30px;
 `;
+
+export const AvatarContainer = styled.div`
+  margin: auto;
+  font-family: 'Lato', Verdana, sans-serif;
+`;

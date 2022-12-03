@@ -86,6 +86,7 @@ const RegisterForm = () => {
         onClick={onSubmit}
         bgc="var(--color-blue)"
         width="224px"
+        margin="auto"
       />
     </form>
   );

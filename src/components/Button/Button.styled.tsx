@@ -3,9 +3,10 @@ import styled from 'styled-components';
 const StyledButton = styled.button<{
   bgc: string;
   width: string;
+  margin?: string;
 }>`
   display: block;
-  margin: auto;
+  margin: ${({ margin }) => margin};
   padding: 9px 4px;
   width: ${({ width }) => width};
   border: none;

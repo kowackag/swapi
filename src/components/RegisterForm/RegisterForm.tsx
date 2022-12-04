@@ -8,6 +8,7 @@ import Button from 'components/Button/Button';
 
 import valdationSchema from './valdationSchema';
 import { ProfileListContext } from 'services/context';
+import { saveData } from 'services/DataAPI';
 
 const RegisterForm = () => {
   const { avatarProfileList } = useContext(ProfileListContext);
@@ -25,11 +26,10 @@ const RegisterForm = () => {
       user_data: data,
       star_wars_data: avatarProfileList,
     });
-
-    return {
+    saveData({
       user_data: data,
       star_wars_data: avatarProfileList,
-    };
+    });
   });
 
   return (

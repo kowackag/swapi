@@ -8,6 +8,7 @@ import StyledStarWars, {
   Name,
   IconBox,
   Container,
+  Text,
 } from './StarWars.styled';
 
 import { getProfile } from 'services/DataAPI';
@@ -104,6 +105,10 @@ const StarWars = () => {
             <img src="icons/avatar.svg" alt="avatar-icon" />
             <img src="icons/checkbox-green.svg" alt="checkbox accept" />
           </IconBox>
+        </Container>
+        <Container>
+          <Text> age: {avatarData && avatarData.age}</Text>
+          <Text> eye color: {avatarData && avatarData.eye_color}</Text>
         </Container>
       </Box>
       <Button

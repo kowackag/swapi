@@ -24,6 +24,12 @@ export const Container = styled.div`
   margin: auto;
 `;
 
+export const Text = styled.div`
+  font-size: 2rem;
+  font-style: italic;
+  font-weight: 300;
+`;
+
 export const IconBox = styled.div`
   display: inline-block;
   width: 115px;

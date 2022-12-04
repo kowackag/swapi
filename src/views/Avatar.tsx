@@ -1,6 +1,6 @@
 import React from 'react';
 
-import { AvatarContainer } from 'components/Containers/Container.styled';
+import { AvatarContainer } from 'common/components/Containers/Container.styled';
 import AvatarHeader from 'components/AvatarHeader/AvatarHeader';
 import StarWars from 'components/StarWars/StarWars';
 

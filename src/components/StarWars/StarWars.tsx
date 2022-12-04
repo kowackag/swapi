@@ -1,13 +1,13 @@
 import React, { useCallback, useContext, useEffect, useState } from 'react';
 
-import Button from 'components/Button/Button';
-import Image from 'components/Image/Image';
+import Button from 'common/components/Button/Button';
+import Image from 'common/components/Image/Image';
 
 import StyledStarWars, {
   Box,
-  Name,
-  IconBox,
   Container,
+  IconBox,
+  Name,
   Text,
 } from './StarWars.styled';
 
@@ -19,18 +19,15 @@ interface AvatarDataType {
   created: string;
   vehicles: string[] | [];
   eye_color: string;
-  age: string;
+  birthYear: string;
 }
 
 const StarWars = () => {
   const [avatarNumber, setAvatarNumber] = useState(1);
   const [avatarData, setAvatarData] = useState<AvatarDataType>();
+
   const { avatarProfileList, setAvatarProfileList } =
     useContext(ProfileListContext);
-
-  const getImageUrl = () => {
-    return 'https://picsum.photos/534/383';
-  };
 
   const addProfile = useCallback(() => {
     avatarData &&
@@ -64,7 +61,7 @@ const StarWars = () => {
             created: profileData.created,
             vehicles: profileData.vehicles,
             eye_color: profileData.eye_color,
-            age: profileData.birth_year,
+            birthYear: profileData.birth_year,
           });
       } catch (error) {
         console.error(error);
@@ -89,7 +86,7 @@ const StarWars = () => {
     <StyledStarWars>
       <Box>
         <Image
-          src={getImageUrl() + '?' + new Date()}
+          src={`https://picsum.photos/534/383/?${avatarNumber}`}
           margin="140px 0 0 144px"
           width="534px"
           height="383px"
@@ -104,7 +101,7 @@ const StarWars = () => {
           </IconBox>
         </Container>
         <Container>
-          <Text> age: {avatarData && avatarData.age}</Text>
+          <Text> birth year: {avatarData && avatarData.birthYear}</Text>
           <Text> eye color: {avatarData && avatarData.eye_color}</Text>
         </Container>
       </Box>

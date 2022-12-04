@@ -1,5 +1,5 @@
 import React from 'react';
-import StyledRegisterTitle, { Title, Line } from './RegisterTitle.styled';
+import StyledRegisterTitle, { Line, Title } from './RegisterTitle.styled';
 
 const RegisterTitle = () => {
   return (

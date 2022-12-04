@@ -10,8 +10,8 @@ export const Title = styled.h2`
 
 export const Line = styled.span`
   display: inline-block;
-  width: 166px;
   margin-top: 12px;
+  width: 166px;
   border-bottom: 9px solid var(--color-blue);
   text-transform: uppercase;
 `;

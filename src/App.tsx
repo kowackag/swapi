@@ -4,7 +4,7 @@ import { Route, Routes, Navigate } from 'react-router-dom';
 import { Paths } from 'common/constants/paths';
 import { ProfileListContext } from 'services/context';
 
-import { Container } from 'components/Containers/Container.styled';
+import { Container } from 'common/components/Containers/Container.styled';
 import Avatar from 'views/Avatar';
 import Register from 'views/Register';
 
@@ -18,7 +18,6 @@ const App = () => {
   const [avatarProfileList, setAvatarProfileList] = useState<
     AvatarProfileType[] | []
   >([]);
-  console.log(avatarProfileList);
 
   return (
     <ProfileListContext.Provider

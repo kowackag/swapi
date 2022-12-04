@@ -1,35 +1,43 @@
 import React from 'react';
 import { FieldValues, Path, UseFormRegister } from 'react-hook-form';
 
-import { Container, Input, Label, ErrorMessage } from './FormCheckbox.styled';
+import { Container, Input, Label, ErrorMessage } from './FormInput.styled';
 
-interface FormCheckboxProps {
+interface FormInputProps {
+  errorText: string;
   id: string;
   inputName: Path<FieldValues>;
-  label: string;
   isValid: boolean;
-  errorText: string;
+  label: string;
+  mb?: string;
+  mt?: string;
   register: UseFormRegister<any>;
   type: string;
-  mt?: string;
-  mb?: string;
+  width?: string;
 }
 
-function FormCheckbox({
+function FormInput({
   errorText,
   id,
   inputName,
   isValid,
   label,
-  mt,
   mb,
-  type,
+  mt,
   register,
-}: FormCheckboxProps) {
+  type,
+  width,
+}: FormInputProps) {
   return (
-    <Container mt={mt} mb={mb}>
-      <Input {...register(inputName)} isValid={isValid} id={id} type={type} />
+    <Container mb={mb} mt={mt}>
       <Label htmlFor={id}>{label}</Label>
+      <Input
+        {...register(inputName)}
+        id={id}
+        isValid={isValid}
+        type={type}
+        width={width}
+      />
       {!isValid && errorText && (
         <ErrorMessage isValid={isValid}>{errorText}</ErrorMessage>
       )}
@@ -37,4 +45,4 @@ function FormCheckbox({
   );
 }
 
-export default FormCheckbox;
+export default FormInput;

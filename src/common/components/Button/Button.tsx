@@ -10,14 +10,14 @@ interface ButtonProps {
   type?: 'submit' | 'reset' | 'button';
 }
 
-const Button = ({ value, onClick, bgc, width, margin, type }: ButtonProps) => {
+const Button = ({ bgc, onClick, margin, type, width, value }: ButtonProps) => {
   return (
     <StyledButton
-      onClick={onClick}
       bgc={bgc}
-      width={width}
       margin={margin}
+      onClick={onClick}
       type={type}
+      width={width}
     >
       {value}
     </StyledButton>

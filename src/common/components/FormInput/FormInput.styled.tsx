@@ -22,8 +22,8 @@ export const Input = styled.input<{
 
 export const Label = styled.label`
   display: block;
-  padding: 8px 0;
   margin-bottom: 6px;
+  padding: 8px 0;
   font-weight: 700;
   line-height: 165%;
 `;
@@ -40,8 +40,8 @@ export const ErrorMessage = styled.p<{
 `;
 
 export const Container = styled.div<{
-  mt?: string;
   mb?: string;
+  mt?: string;
 }>`
   position: relative;
   margin-top: ${({ mt }) => mt};

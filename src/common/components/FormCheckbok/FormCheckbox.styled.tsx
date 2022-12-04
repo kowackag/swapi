@@ -6,27 +6,27 @@ export const Input = styled.input<{
   -moz-appearance: none;
   -webkit-appearance: none;
   -o-appearance: none;
+  display: inline-block;
   width: 29px;
   height: 29px;
   margin-right: 21px;
-  display: inline-block;
   border: none;
   outline: none;
   vertical-align: middle;
 
   &::after {
-    vertical-align: middle;
+    content: '';
     display: inline-block;
     box-sizing: border-box;
     width: 30px;
     height: 30px;
-    content: '';
     border-style: solid;
     border-width: 3px;
     border-radius: 3px;
-    background-color: white;
     border-color: ${({ isValid }) =>
       isValid ? 'var(--color-font)' : 'var(--color-error)'};
+    background-color: white;
+    vertical-align: middle;
   }
 
   &:checked::after {
@@ -35,10 +35,10 @@ export const Input = styled.input<{
 `;
 
 export const Label = styled.label`
-  vertical-align: middle;
   padding: 6px 0;
   margin-bottom: 18px;
   font-weight: 700;
+  vertical-align: middle;
 `;
 
 export const ErrorMessage = styled.p<{
@@ -52,8 +52,8 @@ export const ErrorMessage = styled.p<{
 `;
 
 export const Container = styled.div<{
-  mt?: string;
   mb?: string;
+  mt?: string;
 }>`
   position: relative;
   margin-top: ${({ mt }) => mt};

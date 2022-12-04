@@ -2,9 +2,9 @@ import React, { useContext } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
-import FormInput from 'components/FormInput/FormInput';
-import FormCheckbox from 'components/FormCheckbok/FormCheckbox';
-import Button from 'components/Button/Button';
+import FormInput from 'common/components/FormInput/FormInput';
+import FormCheckbox from 'common/components/FormCheckbok/FormCheckbox';
+import Button from 'common/components/Button/Button';
 
 import valdationSchema from './valdationSchema';
 import { ProfileListContext } from 'services/context';
@@ -15,7 +15,7 @@ const RegisterForm = () => {
   const {
     register,
     handleSubmit,
-    formState: { errors, touchedFields },
+    formState: { errors },
   } = useForm<FieldValues>({
     resolver: yupResolver(valdationSchema),
     mode: 'all',
@@ -35,67 +35,63 @@ const RegisterForm = () => {
   return (
     <form>
       <FormInput
+        errorText={errors.login?.message}
         id="login"
         inputName="login"
-        label="Login:"
-        type="text"
         isValid={!errors.login}
-        register={register}
-        isTouched={touchedFields.login}
-        errorText={errors.login?.message}
+        label="Login:"
         mb="24px"
+        register={register}
+        type="text"
       />
       <FormInput
+        errorText={errors.password?.message}
         id="password"
         inputName="password"
-        label="Hasło:"
-        type="password"
         isValid={!errors.password}
-        register={register}
-        isTouched={touchedFields.password}
-        errorText={errors.password?.message}
+        label="Hasło:"
         mb="24px"
+        register={register}
+        type="password"
       />
       <FormInput
         id="email"
-        inputName="email"
-        label="E-mail:"
-        type="text"
-        isValid={!errors.email}
-        register={register}
-        isTouched={touchedFields.email}
         errorText={errors.email?.message}
+        inputName="email"
+        isValid={!errors.email}
+        label="E-mail:"
         mb="24px"
+        register={register}
+        type="text"
       />
       <FormInput
+        errorText={errors.phone?.message}
         id="phone"
         inputName="phone"
-        label="Numer telefonu:"
-        type="text"
         isValid={!errors.phone}
-        register={register}
-        isTouched={touchedFields.phone}
-        errorText={errors.phone?.message}
+        label="Numer telefonu:"
         mb="24px"
+        register={register}
+        type="tel"
       />
       <FormCheckbox
+        errorText={errors.isAccepted?.message}
         id="isAccepted"
         inputName="isAccepted"
-        label="Akceptuję Regulamin:"
-        type="checkbox"
         isValid={!errors.isAccepted}
-        register={register}
-        errorText={errors.isAccepted?.message}
-        mt="36px"
+        label="Akceptuję Regulamin:"
         mb="28px"
+        mt="36px"
+        register={register}
+        type="checkbox"
       />
       <Button
-        type="submit"
-        value="zapisz"
-        onClick={onSubmit}
         bgc="var(--color-blue)"
-        width="224px"
         margin="auto"
+        onClick={onSubmit}
+        type="submit"
+        width="224px"
+        value="zapisz"
       />
     </form>
   );

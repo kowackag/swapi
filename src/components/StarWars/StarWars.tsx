@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useCallback, useContext, useEffect, useState } from 'react';
 
 import Button from 'components/Button/Button';
 import Image from 'components/Image/Image';
@@ -10,7 +10,8 @@ import StyledStarWars, {
   Container,
 } from './StarWars.styled';
 
-import { getProfile } from 'api/DataAPI';
+import { getProfile } from 'services/DataAPI';
+import { ProfileListContext } from 'services/context';
 
 interface AvatarDataType {
   name: string;
@@ -23,11 +24,12 @@ interface AvatarDataType {
 const StarWars = () => {
   const [avatarNumber, setAvatarNumber] = useState(1);
   const [avatarData, setAvatarData] = useState<AvatarDataType>();
-  const [starWarsData, setStarWarsData] = useState<AvatarDataType[] | []>([]);
+  const { avatarProfileList, setAvatarProfileList } =
+    useContext(ProfileListContext);
 
   const addProfile = useCallback(() => {
-    avatarData && setStarWarsData([...starWarsData, avatarData]);
-  }, [setStarWarsData, starWarsData, avatarData]);
+    avatarData && setAvatarProfileList([...avatarProfileList, avatarData]);
+  }, [setAvatarProfileList, avatarProfileList, avatarData]);
 
   const getNextProfile = () => {
     let number: number = avatarNumber;
@@ -59,8 +61,10 @@ const StarWars = () => {
   }, [avatarNumber]);
 
   useEffect(() => {
-    avatarData && starWarsData.length === 0 && setStarWarsData([avatarData]);
-  }, [avatarData, starWarsData.length]);
+    avatarData &&
+      avatarProfileList.length === 0 &&
+      setAvatarProfileList([avatarData]);
+  }, [avatarData, avatarProfileList.length, setAvatarProfileList]);
 
   return (
     <StyledStarWars>

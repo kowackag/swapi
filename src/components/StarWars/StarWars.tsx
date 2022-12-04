@@ -27,13 +27,28 @@ const StarWars = () => {
   const { avatarProfileList, setAvatarProfileList } =
     useContext(ProfileListContext);
 
+  const getImageUrl = () => {
+    return 'https://picsum.photos/534/383';
+  };
+  const [image, setImage] = useState('https://picsum.photos/534/383');
+
+  console.log(getImageUrl());
   const addProfile = useCallback(() => {
-    avatarData && setAvatarProfileList([...avatarProfileList, avatarData]);
+    avatarData &&
+      setAvatarProfileList([
+        ...avatarProfileList,
+        {
+          name: avatarData?.name,
+          created: avatarData?.created,
+          vehicles: avatarData?.vehicles,
+        },
+      ]);
   }, [setAvatarProfileList, avatarProfileList, avatarData]);
 
   const getNextProfile = () => {
     let number: number = avatarNumber;
     setAvatarNumber(++number);
+    setImage('https://picsum.photos/534/383;');
   };
 
   const handleOnClick = () => {
@@ -63,14 +78,20 @@ const StarWars = () => {
   useEffect(() => {
     avatarData &&
       avatarProfileList.length === 0 &&
-      setAvatarProfileList([avatarData]);
+      setAvatarProfileList([
+        {
+          name: avatarData?.name,
+          created: avatarData?.created,
+          vehicles: avatarData?.vehicles,
+        },
+      ]);
   }, [avatarData, avatarProfileList.length, setAvatarProfileList]);
 
   return (
     <StyledStarWars>
       <Box>
         <Image
-          src="https://picsum.photos/534/383"
+          src={image}
           margin="140px 0 0 144px"
           width="534px"
           height="383px"

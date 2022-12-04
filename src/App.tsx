@@ -12,8 +12,6 @@ interface AvatarProfileType {
   name: string;
   created: string;
   vehicles: string[] | [];
-  eye_color: string;
-  age: string;
 }
 
 const App = () => {

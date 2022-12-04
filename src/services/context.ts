@@ -4,8 +4,6 @@ interface ProfileData {
   name: string;
   created: string;
   vehicles: string[] | [];
-  eye_color: string;
-  age: string;
 }
 
 type ProfileContextType = {

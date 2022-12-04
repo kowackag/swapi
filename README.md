@@ -66,7 +66,6 @@ http://localhost:3000
 ### **Links:**
 
 - [GitHub](https://github.com/kowackag/swapi)
-- [Live](https://kowackag.github.io/swapi/register)
 
 &nbsp;
 

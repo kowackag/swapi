@@ -1,14 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { FieldValues, useForm } from 'react-hook-form';
 import { yupResolver } from '@hookform/resolvers/yup';
 
 import FormInput from 'components/FormInput/FormInput';
+import FormCheckbox from 'components/FormCheckbok/FormCheckbox';
 import Button from 'components/Button/Button';
 
 import valdationSchema from './valdationSchema';
-import FormCheckbox from 'components/FormCheckbok/FormCheckbox';
+import { ProfileListContext } from 'services/context';
 
 const RegisterForm = () => {
+  const { avatarProfileList } = useContext(ProfileListContext);
   const {
     register,
     handleSubmit,
@@ -19,8 +21,15 @@ const RegisterForm = () => {
   });
 
   const onSubmit = handleSubmit((data) => {
-    console.log(data);
-    return data;
+    console.log({
+      user_data: data,
+      star_wars_data: avatarProfileList,
+    });
+
+    return {
+      user_data: data,
+      star_wars_data: avatarProfileList,
+    };
   });
 
   return (

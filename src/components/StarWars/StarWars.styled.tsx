@@ -18,15 +18,21 @@ export const Name = styled.h2`
   text-align: center;
 `;
 
-export const Container = styled.h2`
-  /* position: relative; */
+export const Container = styled.div`
+  position: relative;
+  width: 534px;
+  margin: auto;
 `;
 
 export const IconBox = styled.div`
   display: inline-block;
-  /* position: absolute;X
-  top: 0;
-  right: 0; */
+  width: 115px;
+  display: flex;
+  justify-content: space-between;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  right: 0;
 `;
 
 const StyledStarWars = styled.div`

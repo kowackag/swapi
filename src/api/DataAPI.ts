@@ -1,24 +1,23 @@
-interface ResponseProps {
-  ok: string;
-  status: string;
+import axios from 'axios';
+
+const profile = axios.create({
+  baseURL: process.env.REACT_APP_PROFILE_API_URL,
+});
+
+interface ProfileType {
+  name: string;
+  created: string;
+  vehicles: string[] | [];
+  eye_color: string;
+  birth_year: string;
 }
-const url: string = 'https://swapi.py4e.com/api/';
 
-const handleErrors = (resp) => {
-  if (!resp.ok) {
-    return Promise.reject(resp.status);
-  }
-  return resp;
-};
+console.log(process.env.REACT_APP_PROFILE_API_URL);
 
-export const getAvatarFromAPI = (num)  => {
-  const options = {
-    method: 'GET',
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
-  return fetch(`${url}/people/${num}`, options)
-    .then((resp) => handleErrors(resp))
-    .then((resp) => resp.json()).then((resp) => resp);
-};
+export default profile;
+
+export async function getProfile(num: number): Promise<ProfileType> {
+  console.log(process.env.REACT_APP_PROFILE_API_URL);
+  const response = await profile.get(`/${num}`);
+  return response.data;
+}

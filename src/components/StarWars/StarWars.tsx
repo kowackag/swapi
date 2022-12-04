@@ -1,37 +1,77 @@
-import React, { useEffect, useState } from 'react';
+import React, { useCallback, useEffect, useState } from 'react';
 
 import Button from 'components/Button/Button';
 import Image from 'components/Image/Image';
 
-import StyledStarWars, { Box, Name, IconBox, Container } from './StarWars.styled';
+import StyledStarWars, {
+  Box,
+  Name,
+  IconBox,
+  Container,
+} from './StarWars.styled';
 
-import { getAvatarFromAPI } from 'api/DataAPI';
+import { getProfile } from 'api/DataAPI';
+
+interface AvatarDataType {
+  name: string;
+  created: string;
+  vehicles: string[] | [];
+  eye_color: string;
+  age: string;
+}
 
 const StarWars = () => {
   const [avatarNumber, setAvatarNumber] = useState(1);
-  const [avatarData, setAvatarData] = useState();
-  const [starWarsData, setStarWarsData] = useState([]);
+  const initAvatarData = {
+    name: '',
+    created: '',
+    vehicles: [],
+    eye_color: '',
+    age: '',
+  };
+  const [avatarData, setAvatarData] = useState<AvatarDataType>(initAvatarData);
+  const [starWarsData, setStarWarsData] = useState<AvatarDataType[] | []>([]);
+
+  const addProfile = useCallback((): any => {
+    avatarData && setStarWarsData([...starWarsData, avatarData]);
+  }, [setStarWarsData, starWarsData, avatarData]);
+
+  const getNextProfile = () => {
+    let number: number = avatarNumber;
+    setAvatarNumber(++number);
+  };
+
+  const handleOnClick = () => {
+    addProfile();
+    getNextProfile();
+  };
 
   useEffect(() => {
-    getAvatarFromAPI(avatarNumber).then((resp) =>
-      setAvatarData({
-        name: resp.name,
-        created: resp.created,
-        vehicles: resp.vehicles,
-      })
-    );
+    async function fetchData() {
+      try {
+        const profileData = await getProfile(avatarNumber);
+        profileData &&
+          setAvatarData({
+            name: profileData.name,
+            created: profileData.created,
+            vehicles: profileData.vehicles,
+            eye_color: profileData.eye_color,
+            age: profileData.birth_year,
+          });
+      } catch (error) {
+        console.error(error);
+      }
+    }
+    fetchData();
   }, [avatarNumber]);
 
-  useEffect(() => {
-    setStarWarsData([avatarData]);
-  }, [avatarData]);
   console.log(avatarData);
   console.log(starWarsData);
   return (
     <StyledStarWars>
       <Box>
         <Image
-          src="https://i.picsum.photos/id/402/534/383.jpg?hmac=OzpWPbrBSzdnFhXAufE8RTNy-Ej_RUau9NRvccaLubA"
+          src="https://picsum.photos/534/383"
           margin="140px 0 0 144px"
           width="534px"
           height="383px"
@@ -48,7 +88,7 @@ const StarWars = () => {
       </Box>
       <Button
         value="next profiles"
-        onClick={() => setAvatarNumber(2)}
+        onClick={handleOnClick}
         bgc="var(--color-green)"
         width="224px"
         margin="auto"

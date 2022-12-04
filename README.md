@@ -1,4 +1,4 @@
-![](./public/top.jpg)
+![](./public/screen/allinone.jpg)
 
 # SWAPI
 

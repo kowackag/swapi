@@ -37,6 +37,7 @@ function FormInput({
         isValid={isValid}
         type={type}
         width={width}
+        autoComplete={type === 'passwword' ? 'off' : 'on'}
       />
       {!isValid && errorText && (
         <ErrorMessage isValid={isValid}>{errorText}</ErrorMessage>

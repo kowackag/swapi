@@ -22,17 +22,10 @@ interface AvatarDataType {
 
 const StarWars = () => {
   const [avatarNumber, setAvatarNumber] = useState(1);
-  const initAvatarData = {
-    name: '',
-    created: '',
-    vehicles: [],
-    eye_color: '',
-    age: '',
-  };
-  const [avatarData, setAvatarData] = useState<AvatarDataType>(initAvatarData);
+  const [avatarData, setAvatarData] = useState<AvatarDataType>();
   const [starWarsData, setStarWarsData] = useState<AvatarDataType[] | []>([]);
 
-  const addProfile = useCallback((): any => {
+  const addProfile = useCallback(() => {
     avatarData && setStarWarsData([...starWarsData, avatarData]);
   }, [setStarWarsData, starWarsData, avatarData]);
 
@@ -65,8 +58,10 @@ const StarWars = () => {
     fetchData();
   }, [avatarNumber]);
 
-  console.log(avatarData);
-  console.log(starWarsData);
+  useEffect(() => {
+    avatarData && starWarsData.length === 0 && setStarWarsData([avatarData]);
+  }, [avatarData, starWarsData.length]);
+
   return (
     <StyledStarWars>
       <Box>

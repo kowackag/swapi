@@ -12,12 +12,9 @@ interface ProfileType {
   birth_year: string;
 }
 
-console.log(process.env.REACT_APP_PROFILE_API_URL);
-
 export default profile;
 
 export async function getProfile(num: number): Promise<ProfileType> {
-  console.log(process.env.REACT_APP_PROFILE_API_URL);
   const response = await profile.get(`/${num}`);
   return response.data;
 }

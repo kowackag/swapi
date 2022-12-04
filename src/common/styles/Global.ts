@@ -122,7 +122,7 @@ const GlobalStyle = createGlobalStyle`
         justify-content: center;
         margin: auto;
         max-width: 1133px;
-        height: 100vh;
+        height: 1200px;
     }
 
     a {

@@ -31,9 +31,7 @@ const StarWars = () => {
   const getImageUrl = () => {
     return 'https://picsum.photos/534/383';
   };
-  const [image, setImage] = useState('https://picsum.photos/534/383');
 
-  console.log(getImageUrl());
   const addProfile = useCallback(() => {
     avatarData &&
       setAvatarProfileList([
@@ -49,7 +47,6 @@ const StarWars = () => {
   const getNextProfile = () => {
     let number: number = avatarNumber;
     setAvatarNumber(++number);
-    setImage('https://picsum.photos/534/383;');
   };
 
   const handleOnClick = () => {
@@ -92,7 +89,7 @@ const StarWars = () => {
     <StyledStarWars>
       <Box>
         <Image
-          src={image}
+          src={getImageUrl() + '?' + new Date()}
           margin="140px 0 0 144px"
           width="534px"
           height="383px"

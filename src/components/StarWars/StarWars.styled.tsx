@@ -13,7 +13,7 @@ export const Box = styled.div`
 
 export const Name = styled.h2`
   margin: 22px 100px 10px;
-  font-size: 4rem; // should be 5rem but it was too much in long name, looks better now
+  font-size: 4.2rem; // should be 5rem but it was too much in long name, looks better now
   line-height: 0.9;
   font-weight: 800;
   text-align: center;

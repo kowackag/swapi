@@ -26,7 +26,7 @@ const App = () => {
       <Container>
         <Routes>
           <Route
-            path="/"
+            path="/swapi"
             element={<Navigate replace to={Paths.AVATAR_PROFILE} />}
           />
           <Route path={Paths.AVATAR_PROFILE} element={<Avatar />} />

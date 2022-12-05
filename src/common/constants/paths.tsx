@@ -4,6 +4,6 @@ interface PathsType {
 }
 
 export const Paths: PathsType = {
-  AVATAR_PROFILE: '/avatar-profile',
-  REGISTER: '/register',
+  AVATAR_PROFILE: '/swapi/avatar-profile',
+  REGISTER: '/swapi/register',
 };

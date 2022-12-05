@@ -66,7 +66,7 @@ http://localhost:3000
 ### **Links:**
 
 - [GitHub](https://github.com/kowackag/swapi)
-
+- [Live](http://kowackag.github.io/swapi)
 &nbsp;
 
 ## 💡 My process

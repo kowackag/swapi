@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.js": "/swapi/static/js/main.863dfd1b.js",
+    "main.js": "/swapi/static/js/main.9f76d84a.js",
     "static/media/lato-bold-webfont.woff": "/swapi/static/media/lato-bold-webfont.6f74a6070cdac2d6a3cf.woff",
     "static/media/lato-regular-webfont.woff": "/swapi/static/media/lato-regular-webfont.994ef840711843659f81.woff",
     "static/media/inter-lightitalic-beta-webfont.woff": "/swapi/static/media/inter-lightitalic-beta-webfont.af7d446d20fa78f135d6.woff",
@@ -16,9 +16,9 @@
     "static/media/inter-extrabold-webfont.woff2": "/swapi/static/media/inter-extrabold-webfont.5e81eb01829ad3ea265e.woff2",
     "static/media/inter-bold-webfont.woff2": "/swapi/static/media/inter-bold-webfont.f570ff50012f3df4f1e4.woff2",
     "index.html": "/swapi/index.html",
-    "main.863dfd1b.js.map": "/swapi/static/js/main.863dfd1b.js.map"
+    "main.9f76d84a.js.map": "/swapi/static/js/main.9f76d84a.js.map"
   },
   "entrypoints": [
-    "static/js/main.863dfd1b.js"
+    "static/js/main.9f76d84a.js"
   ]
 }

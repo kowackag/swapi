@@ -159,7 +159,8 @@ import { FieldValues, useForm } from 'react-hook-form';
   const {
       register,
       handleSubmit,
-      formState: { errors, touchedFields },
+      reset,
+      formState: { errors },
     } = useForm<FieldValues>({
       resolver: yupResolver(valdationSchema),
       mode: 'all',

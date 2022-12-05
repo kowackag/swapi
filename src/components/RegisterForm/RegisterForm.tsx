@@ -15,6 +15,7 @@ const RegisterForm = () => {
   const {
     register,
     handleSubmit,
+    reset,
     formState: { errors },
   } = useForm<FieldValues>({
     resolver: yupResolver(valdationSchema),
@@ -30,6 +31,7 @@ const RegisterForm = () => {
       user_data: data,
       star_wars_data: avatarProfileList,
     });
+    reset();
   });
 
   return (

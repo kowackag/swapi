@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.js": "/static/js/main.8226f7f1.js",
-    "static/media/lato-bold-webfont.woff": "/static/media/lato-bold-webfont.6f74a6070cdac2d6a3cf.woff",
-    "static/media/lato-regular-webfont.woff": "/static/media/lato-regular-webfont.994ef840711843659f81.woff",
-    "static/media/inter-lightitalic-beta-webfont.woff": "/static/media/inter-lightitalic-beta-webfont.af7d446d20fa78f135d6.woff",
-    "static/media/lato-italic-webfont.woff": "/static/media/lato-italic-webfont.b9d20b0c3b0be36b87fb.woff",
-    "static/media/inter-regular-webfont.woff": "/static/media/inter-regular-webfont.a3174516a36848978f17.woff",
-    "static/media/lato-bold-webfont.woff2": "/static/media/lato-bold-webfont.621dd864aefef69b8bf9.woff2",
-    "static/media/inter-extrabold-webfont.woff": "/static/media/inter-extrabold-webfont.01eab86e8dd10444e373.woff",
-    "static/media/inter-bold-webfont.woff": "/static/media/inter-bold-webfont.8b42a4cec07254b7cd36.woff",
-    "static/media/lato-regular-webfont.woff2": "/static/media/lato-regular-webfont.57a37cef0228291b19ed.woff2",
-    "static/media/inter-lightitalic-beta-webfont.woff2": "/static/media/inter-lightitalic-beta-webfont.0586883eaa72a61264be.woff2",
-    "static/media/lato-italic-webfont.woff2": "/static/media/lato-italic-webfont.53fe65c48dfe9131ba7c.woff2",
-    "static/media/inter-regular-webfont.woff2": "/static/media/inter-regular-webfont.dacf6548cae44de53cf9.woff2",
-    "static/media/inter-extrabold-webfont.woff2": "/static/media/inter-extrabold-webfont.5e81eb01829ad3ea265e.woff2",
-    "static/media/inter-bold-webfont.woff2": "/static/media/inter-bold-webfont.f570ff50012f3df4f1e4.woff2",
-    "index.html": "/index.html",
-    "main.8226f7f1.js.map": "/static/js/main.8226f7f1.js.map"
+    "main.js": "/swapi/static/js/main.863dfd1b.js",
+    "static/media/lato-bold-webfont.woff": "/swapi/static/media/lato-bold-webfont.6f74a6070cdac2d6a3cf.woff",
+    "static/media/lato-regular-webfont.woff": "/swapi/static/media/lato-regular-webfont.994ef840711843659f81.woff",
+    "static/media/inter-lightitalic-beta-webfont.woff": "/swapi/static/media/inter-lightitalic-beta-webfont.af7d446d20fa78f135d6.woff",
+    "static/media/lato-italic-webfont.woff": "/swapi/static/media/lato-italic-webfont.b9d20b0c3b0be36b87fb.woff",
+    "static/media/inter-regular-webfont.woff": "/swapi/static/media/inter-regular-webfont.a3174516a36848978f17.woff",
+    "static/media/lato-bold-webfont.woff2": "/swapi/static/media/lato-bold-webfont.621dd864aefef69b8bf9.woff2",
+    "static/media/inter-extrabold-webfont.woff": "/swapi/static/media/inter-extrabold-webfont.01eab86e8dd10444e373.woff",
+    "static/media/inter-bold-webfont.woff": "/swapi/static/media/inter-bold-webfont.8b42a4cec07254b7cd36.woff",
+    "static/media/lato-regular-webfont.woff2": "/swapi/static/media/lato-regular-webfont.57a37cef0228291b19ed.woff2",
+    "static/media/inter-lightitalic-beta-webfont.woff2": "/swapi/static/media/inter-lightitalic-beta-webfont.0586883eaa72a61264be.woff2",
+    "static/media/lato-italic-webfont.woff2": "/swapi/static/media/lato-italic-webfont.53fe65c48dfe9131ba7c.woff2",
+    "static/media/inter-regular-webfont.woff2": "/swapi/static/media/inter-regular-webfont.dacf6548cae44de53cf9.woff2",
+    "static/media/inter-extrabold-webfont.woff2": "/swapi/static/media/inter-extrabold-webfont.5e81eb01829ad3ea265e.woff2",
+    "static/media/inter-bold-webfont.woff2": "/swapi/static/media/inter-bold-webfont.f570ff50012f3df4f1e4.woff2",
+    "index.html": "/swapi/index.html",
+    "main.863dfd1b.js.map": "/swapi/static/js/main.863dfd1b.js.map"
   },
   "entrypoints": [
-    "static/js/main.8226f7f1.js"
+    "static/js/main.863dfd1b.js"
   ]
 }
